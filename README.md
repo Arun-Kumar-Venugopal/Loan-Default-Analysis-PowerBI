@@ -125,11 +125,20 @@ The report is built as an end-to-end pipeline:
 ---
 # Snapshot of Dashboard (Power BI Service)
 
-The report, semantic model, and dataflow are deployed in Power BI Service and refreshed using the on-premises data gateway.
+The report, semantic model, and dataflow were published to **Power BI Service** from Power BI Desktop as part of the end-to-end pipeline.
+
+> **Note:**  
+> This project was developed and published using a **Power BI Pro free trial**.  
+> After the trial expired, **dataflow refresh is disabled** because incremental refresh requires **Premium capacity**.  
+> However, the deployment workflow (SQL Server → Dataflow → Dataset → Report) was completed successfully.
 
 ![PowerBI_Service](docs/screenshots/powerbi_service_workspace.png)
 
+
 # Report Snapshot (Power BI Desktop)
+All report visuals and pages shown below are captured from **Power BI Desktop**, 
+which was used for **data modeling, DAX development, and report design** 
+before publishing to Power BI Service.
 
 ### Page 1: Loan Default & Overview
 
