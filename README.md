@@ -1,6 +1,7 @@
 # Loan Default Analysis - End to End Power BI Project (SQL Server + Dataflow + Power BI Service)
 
-### Dashboard Link : https://app.powerbi.com/links/2HxydxvEaj?ctid=4b05e781-4500-43c7-a12b-f7a45bcd4a54&pbi_source=linkShare
+### 📂 GitHub Repository
+https://github.com/Arun-Kumar-Venugopal/Loan-Default-Analysis-PowerBI
 
 ## Architecture
 SQL Server → Power BI Service Dataflow → Power BI Desktop → Power BI Service
@@ -185,6 +186,13 @@ Key insights derived from the dashboard include:
 - On-Premises Data Gateway (Standard Mode)  
 - Power BI Desktop (DAX & Visualizations)  
 - Power BI Service (Publish, Refresh & Sharing)
+
+> Note: Power BI Service link requires Microsoft login.
+> Dataset refresh depends on workspace capacity.
+### ▶️ Live Demo (Power BI Service)
+🔗 View-only report (Microsoft login required):  
+https://app.powerbi.com/links/2HxydxvEaj?ctid=4b05e781-4500-43c7-a12b-f7a45bcd4a54&pbi_source=linkShare
+
 
 ## Author
 Created by: Arun Kumar Venugopal
