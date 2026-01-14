@@ -128,3 +128,46 @@ The report is built as an end-to-end pipeline:
 The report, semantic model, and dataflow are deployed in Power BI Service and refreshed using the on-premises data gateway.
 
 ![PowerBI_Service](docs/screenshots/powerbi_service_workspace.png)
+
+# Report Snapshot (Power BI Desktop)
+
+### Page 1: Loan Default & Overview
+
+This page provides a high-level overview of loan distribution, borrower income, and default trends.
+
+![Page1](docs/screenshots/page1_loan_default_overview.png)
+
+### Page 2: Applicant Demographics & Financial Profile
+
+This page analyzes borrower demographics and financial characteristics across age groups, credit scores, education, and marital status.
+
+![Page2](docs/screenshots/page2_applicant_profile.png)
+
+### Page 3: Financial Risk Metrics
+
+This page focuses on time-based risk analysis using YOY, YTD, and decomposition-based insights.
+
+![Page3](docs/screenshots/page3_financial_risk_metrics.png)
+
+# Insights
+
+A three-page analytical report was created in Power BI Desktop and published to Power BI Service.
+
+Key insights derived from the dashboard include:
+
+- Loan amounts vary significantly by **loan purpose**, highlighting dominant loan categories.
+- **Employment type** impacts both average income levels and default rates.
+- **Default rate by year** reveals fluctuations in credit risk over time.
+- **Credit score segmentation** helps identify differences in loan distribution and borrower risk.
+- **YOY and YTD metrics** provide visibility into changes in loan disbursement and default behavior.
+- The **decomposition tree** enables drill-down analysis of total loan amount by income bracket and employment type.
+
+## Tools & Technologies
+- Microsoft SQL Server & SSMS  
+- Power BI Service (Dataflow Gen1)  
+- On-Premises Data Gateway (Standard Mode)  
+- Power BI Desktop (DAX & Visualizations)  
+- Power BI Service (Publish, Refresh & Sharing)
+
+## Author
+Created by: Arun Kumar Venugopal
