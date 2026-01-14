@@ -1,1 +1,130 @@
-# Test
+# Loan Default Analysis - End to End Power BI Project (SQL Server + Dataflow + Power BI Service)
+
+### Dashboard Link : https://app.powerbi.com/links/2HxydxvEaj?ctid=4b05e781-4500-43c7-a12b-f7a45bcd4a54&pbi_source=linkShare
+
+## Problem Statement
+
+This dashboard helps stakeholders understand **loan performance and default risk** using borrower demographics, credit profile, and time-based risk metrics.  
+It provides insights into:
+
+- Which **loan purposes** contribute most to total loan amount  
+- How **income and default rate** vary by employment type  
+- How **default rate changes over years**  
+- How **loan amount patterns** differ by credit score bins, age groups, marital status, education, mortgage/dependent status  
+- How **YOY and YTD** metrics highlight risk trends over time  
+
+The report is built as an end-to-end pipeline:
+**SQL Server → Power BI Service Dataflow → Power BI Desktop → Power BI Service (Publish + Refresh).**
+
+
+---
+
+## Steps followed
+
+### 1) Data Source Setup (SQL Server)
+- Step 1 : Installed **Microsoft SQL Server Developer Edition** and **SSMS**.
+- Step 2 : Created database `Loan`.
+- Step 3 : Imported the dataset table into SQL Server (table name: `Loan_default`).
+
+### 2) Power BI Gateway Setup
+- Step 4 : Installed and configured **On-premises data gateway (Standard mode)**.
+- Step 5 : Verified gateway connectivity between Power BI Service and SQL Server.
+
+### 3) Dataflow Creation (Power BI Service)
+- Step 6 : Created a workspace for the project.
+- Step 7 : Created **Dataflow (Gen1)** and connected it to SQL Server:
+  - Server: `REYAN`
+  - Database: `Loan`
+  - Table: `Loan_default`
+- Step 8 : Refreshed the Dataflow successfully and confirmed data load.
+
+### 4) Power BI Desktop Report Development
+- Step 9 : Connected Power BI Desktop to **Power BI Dataflow** and loaded `Loan_default`.
+- Step 10 : In Power Query, enabled:
+  - Column quality
+  - Column distribution
+  - Column profile
+  - Column profiling based on **entire dataset**
+- Step 11 : Verified data types (especially `Loan_Date_DD_MM_YYYY` as Date).
+
+### 5) Calculated Columns Created (DAX)
+- Step 12 : Created calculated columns in `Loan_default`:
+  - `Year`
+  - `Age Groups`
+  - `Credit Score Bins`
+  - `Income Bracket`
+
+### 6) Measures Tables Created (DAX Organization)
+- Step 13 : Created 3 measures tables:
+  - `Measures Table 1`
+  - `Measures Table 2`
+  - `Measures Table 3`
+- Step 14 : Added measures into these tables for clean model organization.
+
+### 7) Report Pages Built (3 Pages)
+- Step 15 : Created **Page 1: Loan Default & Overview**
+  - Loan Amount by Purpose
+  - Average Income by Employment Type
+  - Default Rate (%) by Employment Type
+  - Average Loan Amount by Age Group
+  - Default Rate (%) by Year
+
+- Step 16 : Created **Page 2: Applicant Demographics & Financial Profile**
+  - Median Loan Amount by Credit Score Category
+  - Average Loan Amount (High Credit) by Age Groups & Marital Status (Donut)
+  - Total Loan (Adults) by Credit Score Bins
+  - Total Loan (Middle Age Adults) by Mortgage/Dependents
+  - Number of Loans by Education Type
+
+- Step 17 : Created **Page 3: Financial Risk Metrics**
+  - YOY Loan Amount Change by Year
+  - YOY Default Loans Change by Year
+  - YTD Loan Amount by Credit Score Bins & Marital Status
+  - Decomposition Tree using Income Bracket → Employment Type
+
+### 8) Publish to Power BI Service + Refresh
+- Step 18 : Published the report from Power BI Desktop to Power BI Service.
+- Step 19 : Configured **schedule refresh** for the semantic model (dataset).
+- Step 20 : Configured **schedule refresh** (and incremental refresh if enabled) for the Dataflow.
+
+---
+
+## Data Model (Table & Key Fields)
+
+### Table : `Loan_default`
+**Main columns used**
+- LoanID, Age, Income, LoanAmount, CreditScore, EmploymentType, Education, MaritalStatus  
+- HasMortgage, HasDependents, LoanPurpose, Default  
+- Loan_Date_DD_MM_YYYY, Year  
+- Age Groups, Credit Score Bins, Income Bracket  
+
+---
+
+## DAX Measures Used (Summary)
+
+### Measures Table1
+- Loan Amount by Purpose
+- Average Income by Employment Type
+- Default Rate by Employment Type
+- Average Loan by Age Group
+- Default Rate by Year
+
+### Measures Table 2
+- Median by Credit Score bins
+- Average Loan Amount (High Credit)
+- Total Loan (Credit Bins)
+- Total Loan (Middle Age Adults)
+- Loans by Education Type
+- high income borrower rate
+
+### Measures Table 3
+- YOY Loan Amount Change
+- YOY Default Loans Change
+- YTD Loan Amount
+
+---
+# Snapshot of Dashboard (Power BI Service)
+
+The report, semantic model, and dataflow are deployed in Power BI Service and refreshed using the on-premises data gateway.
+
+![PowerBI_Service](docs/screenshots/powerbi_service_workspace.png)
