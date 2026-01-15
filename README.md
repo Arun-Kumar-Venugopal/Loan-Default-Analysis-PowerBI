@@ -23,8 +23,11 @@ to reduce credit risk and improve lending decisions.
 - Default status is assumed final (no recovery tracking)
 - Dataflow refresh is limited due to Power BI Pro trial constraints
 
-## Architecture
-SQL Server → Power BI Service Dataflow → Power BI Desktop → Power BI Service
+## Architecture & Data Flow
+SQL Server  
+→ Power BI Service Dataflow  
+→ Power BI Desktop (Data Modeling & DAX)  
+→ Power BI Service (Publish & Refresh)
 
 ## Key Highlights
 - Designed an end-to-end Power BI solution using SQL Server and Dataflows
