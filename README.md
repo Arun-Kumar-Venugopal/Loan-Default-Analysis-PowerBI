@@ -193,6 +193,14 @@ Key insights derived from the dashboard include:
 🔗 View-only report (Microsoft login required):  
 https://app.powerbi.com/links/2HxydxvEaj?ctid=4b05e781-4500-43c7-a12b-f7a45bcd4a54&pbi_source=linkShare
 
+## What I Learned
+- Building an end-to-end Power BI solution using SQL Server, Dataflows, and Power BI Service
+- Configuring and using the on-premises data gateway for scheduled refresh
+- Designing a star-schema data model for loan and customer analytics
+- Developing DAX measures for default rates, risk segmentation, and time-based analysis
+- Publishing and managing datasets and reports in Power BI Service
+- Understanding Power BI licensing limitations (Pro vs Premium) for dataflows and refresh
+- Documenting enterprise-style BI projects for portfolio and stakeholder review
 
 ## Author
 Created by: Arun Kumar Venugopal
