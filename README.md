@@ -7,6 +7,22 @@ https://github.com/Arun-Kumar-Venugopal/Loan-Default-Analysis-PowerBI
 This dashboard supports **credit risk and lending teams** by analyzing loan default patterns.
 It helps identify **high-risk customers**, monitor **default rates**, and evaluate loan portfolio health to support better credit decision-making.
 
+## Problem Statement
+The business needs to understand **loan default behavior** across customers, loan types, and time periods
+to reduce credit risk and improve lending decisions.
+
+## Key KPIs
+- Total Loans Issued
+- Default Rate
+- Non-Performing Loans (NPL)
+- Loan Amount at Risk
+- Default Trend Over Time
+
+## Assumptions & Limitations
+- Analysis is based on historical loan data only
+- Default status is assumed final (no recovery tracking)
+- Dataflow refresh is limited due to Power BI Pro trial constraints
+
 ## Architecture
 SQL Server → Power BI Service Dataflow → Power BI Desktop → Power BI Service
 
